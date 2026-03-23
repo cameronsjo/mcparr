@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from servarr.clients.base import BaseArrClient
+from mcparr.clients.base import BaseArrClient
 
 
 class ProwlarrClient(BaseArrClient):

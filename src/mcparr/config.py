@@ -1,4 +1,4 @@
-"""Configuration via environment variables with SERVARR_ prefix."""
+"""Configuration via environment variables with MCPARR_ prefix."""
 
 from __future__ import annotations
 
@@ -18,29 +18,29 @@ class ServiceConfig(BaseSettings):
 
 
 class SonarrConfig(ServiceConfig):
-    model_config = SettingsConfigDict(env_prefix="SERVARR_SONARR_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_SONARR_")
 
 
 class RadarrConfig(ServiceConfig):
-    model_config = SettingsConfigDict(env_prefix="SERVARR_RADARR_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_RADARR_")
 
 
 class ProwlarrConfig(ServiceConfig):
-    model_config = SettingsConfigDict(env_prefix="SERVARR_PROWLARR_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_PROWLARR_")
 
 
 class SabnzbdConfig(ServiceConfig):
-    model_config = SettingsConfigDict(env_prefix="SERVARR_SABNZBD_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_SABNZBD_")
 
 
 class BazarrConfig(ServiceConfig):
-    model_config = SettingsConfigDict(env_prefix="SERVARR_BAZARR_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_BAZARR_")
 
 
 class Settings(BaseSettings):
     """Top-level server settings."""
 
-    model_config = SettingsConfigDict(env_prefix="SERVARR_")
+    model_config = SettingsConfigDict(env_prefix="MCPARR_")
 
     # Transport
     host: str = "0.0.0.0"

@@ -1,12 +1,12 @@
-"""Entry point for running the servarr MCP server."""
+"""Entry point for running the mcparr MCP server."""
 
 from __future__ import annotations
 
 import logging
 import sys
 
-from servarr.config import Settings
-from servarr.server import mcp, register_tools
+from mcparr.config import Settings
+from mcparr.server import mcp, register_tools
 
 
 def main() -> None:

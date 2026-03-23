@@ -8,7 +8,7 @@ from typing import Any
 from fastmcp import Context, FastMCP
 from mcp.types import ToolAnnotations
 
-from servarr.clients.radarr import RadarrClient
+from mcparr.clients.radarr import RadarrClient
 
 
 def _get_client(ctx: Context) -> RadarrClient:

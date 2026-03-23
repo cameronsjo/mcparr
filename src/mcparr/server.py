@@ -11,9 +11,9 @@ from mcp.types import ToolAnnotations
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 
-from servarr.config import Settings
+from mcparr.config import Settings
 
-logger = logging.getLogger("servarr")
+logger = logging.getLogger("mcparr")
 
 # ---------------------------------------------------------------------------
 # Lifespan — initialize clients, yield context, tear down
@@ -27,27 +27,27 @@ async def app_lifespan(server: FastMCP) -> dict[str, Any]:  # type: ignore[misc]
     clients: dict[str, Any] = {}
 
     if settings.sonarr.enabled:
-        from servarr.clients.sonarr import SonarrClient
+        from mcparr.clients.sonarr import SonarrClient
 
         clients["sonarr"] = SonarrClient(settings.sonarr.url, settings.sonarr.api_key)
 
     if settings.radarr.enabled:
-        from servarr.clients.radarr import RadarrClient
+        from mcparr.clients.radarr import RadarrClient
 
         clients["radarr"] = RadarrClient(settings.radarr.url, settings.radarr.api_key)
 
     if settings.prowlarr.enabled:
-        from servarr.clients.prowlarr import ProwlarrClient
+        from mcparr.clients.prowlarr import ProwlarrClient
 
         clients["prowlarr"] = ProwlarrClient(settings.prowlarr.url, settings.prowlarr.api_key)
 
     if settings.sabnzbd.enabled:
-        from servarr.clients.sabnzbd import SabnzbdClient
+        from mcparr.clients.sabnzbd import SabnzbdClient
 
         clients["sabnzbd"] = SabnzbdClient(settings.sabnzbd.url, settings.sabnzbd.api_key)
 
     if settings.bazarr.enabled:
-        from servarr.clients.bazarr import BazarrClient
+        from mcparr.clients.bazarr import BazarrClient
 
         clients["bazarr"] = BazarrClient(settings.bazarr.url, settings.bazarr.api_key)
 
@@ -70,7 +70,7 @@ async def app_lifespan(server: FastMCP) -> dict[str, Any]:  # type: ignore[misc]
 # ---------------------------------------------------------------------------
 
 mcp = FastMCP(
-    "servarr",
+    "mcparr",
     instructions=(
         "MCP server for managing the *arr media automation stack. "
         "Provides tools for Sonarr (TV), Radarr (movies), Prowlarr (indexers), "
@@ -89,7 +89,7 @@ mcp = FastMCP(
 
 @mcp.custom_route("/health", methods=["GET"])
 async def health(request: Request) -> JSONResponse:
-    return JSONResponse({"status": "ok", "service": "servarr"})
+    return JSONResponse({"status": "ok", "service": "mcparr"})
 
 
 # ---------------------------------------------------------------------------
@@ -130,26 +130,26 @@ async def get_system_status(ctx: Any) -> dict[str, Any]:
 def register_tools(settings: Settings) -> None:
     """Register tools for enabled services. Called during server startup."""
     if settings.sonarr.enabled:
-        from servarr.tools.sonarr import register as register_sonarr
+        from mcparr.tools.sonarr import register as register_sonarr
 
         register_sonarr(mcp)
 
     if settings.radarr.enabled:
-        from servarr.tools.radarr import register as register_radarr
+        from mcparr.tools.radarr import register as register_radarr
 
         register_radarr(mcp)
 
     if settings.prowlarr.enabled:
-        from servarr.tools.prowlarr import register as register_prowlarr
+        from mcparr.tools.prowlarr import register as register_prowlarr
 
         register_prowlarr(mcp)
 
     if settings.sabnzbd.enabled:
-        from servarr.tools.sabnzbd import register as register_sabnzbd
+        from mcparr.tools.sabnzbd import register as register_sabnzbd
 
         register_sabnzbd(mcp)
 
     if settings.bazarr.enabled:
-        from servarr.tools.bazarr import register as register_bazarr
+        from mcparr.tools.bazarr import register as register_bazarr
 
         register_bazarr(mcp)

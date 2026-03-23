@@ -7,7 +7,7 @@ PYRIGHT := uv run pyright
 
 .PHONY: dev
 dev: ## Start development server (HTTP transport)
-	$(PYTHON) -m servarr
+	$(PYTHON) -m mcparr
 
 .PHONY: install
 install: ## Install dependencies
@@ -45,11 +45,11 @@ test: ## Run tests
 
 .PHONY: docker-build
 docker-build: ## Build Docker image
-	docker build -t servarr:local .
+	docker build -t mcparr:local .
 
 .PHONY: docker-run
 docker-run: ## Run Docker container (requires .env file)
-	docker run --rm --env-file .env -p 8080:8080 servarr:local
+	docker run --rm --env-file .env -p 8080:8080 mcparr:local
 
 ## -- Help --------------------------------------------------------------
 

@@ -7,7 +7,7 @@ from typing import Any
 from fastmcp import Context, FastMCP
 from mcp.types import ToolAnnotations
 
-from servarr.clients.prowlarr import ProwlarrClient
+from mcparr.clients.prowlarr import ProwlarrClient
 
 # Newznab standard category mapping
 CATEGORY_MAP: dict[str, int] = {

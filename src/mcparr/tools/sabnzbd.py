@@ -7,7 +7,7 @@ from typing import Any
 from fastmcp import Context, FastMCP
 from mcp.types import ToolAnnotations
 
-from servarr.clients.sabnzbd import SabnzbdClient
+from mcparr.clients.sabnzbd import SabnzbdClient
 
 
 def register(mcp: FastMCP) -> None:

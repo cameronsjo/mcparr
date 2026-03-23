@@ -8,7 +8,7 @@ from typing import Any
 from fastmcp import Context, FastMCP
 from mcp.types import ToolAnnotations
 
-from servarr.clients.sonarr import SonarrClient
+from mcparr.clients.sonarr import SonarrClient
 
 
 def _get_client(ctx: Context) -> SonarrClient:

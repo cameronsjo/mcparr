@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.2](https://github.com/cameronsjo/mcparr/compare/v0.1.1...v0.1.2) (2026-03-23)
+
+
+### Documentation
+
+* add field report — zero to deployed MCP server ([9114637](https://github.com/cameronsjo/mcparr/commit/91146373b6fa3223f03110004a2ce02844b2ca0a))
+
 ## [0.1.1](https://github.com/cameronsjo/mcparr/compare/v0.1.0...v0.1.1) (2026-03-23)
 
 

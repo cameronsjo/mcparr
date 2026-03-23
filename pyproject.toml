@@ -1,6 +1,6 @@
 [project]
 name = "mcparr"
-version = "0.1.1"
+version = "0.1.2"
 description = "Unified MCP server for the *arr media automation stack"
 readme = "README.md"
 license = { text = "MIT" }

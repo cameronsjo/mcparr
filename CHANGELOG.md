@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [0.1.1](https://github.com/cameronsjo/mcparr/compare/v0.1.0...v0.1.1) (2026-03-23)
+
+
+### Features
+
+* apply essentials scaffold ([2977932](https://github.com/cameronsjo/mcparr/commit/2977932711072da81b5192f607264219f6e5ab3e))
+* initial servarr MCP server ([99c490a](https://github.com/cameronsjo/mcparr/commit/99c490a0c8329620ce6d43f4afd1ca6a67db3262))
+
+
+### Bug Fixes
+
+* include README.md in Docker build, relax uv_build constraint ([ff970f7](https://github.com/cameronsjo/mcparr/commit/ff970f7d327e0d93f71001f8d8979b3957237afd))
+
+
+### Documentation
+
+* add README with usage, config, and tool reference ([76c3540](https://github.com/cameronsjo/mcparr/commit/76c3540940d3fc6ed77351ab64879f641c617420))
+
 ## [0.1.0] - 2026-03-23
 
 ### Added
